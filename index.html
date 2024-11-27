@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<table style="width: 75%;height: 75%">
+    <tr class="row123">
+        <th>EVDOKIJA</th>
+        <td>Markova</td>
+    </tr>
+    <tr class="row">
+        <th>EVDOKIJA</th>
+        <td>Dermendzieva</td>
+    </tr>
+</table>
+<button id="dabe" onclick="da()" style="background-color: green">DA!!</button>
+<button id="nebe" onclick="ne()" style="background-color: red">NE!!</button>
+<button id="odnovo" onclick="againbtn()" style="background-color: burlywood">IZ POCETKA!!</button>
+<script>
+    function da(){
+        let red = document.getElementsByClassName("row");
+        for (let i=0;i<red.length;i++) {
+            red[i].style.backgroundColor = "green";
+        }
+    }
+    function ne(){
+        let red = document.getElementsByClassName("row123");
+        for (let i=0;i<red.length;i++) {
+            red[i].style.backgroundColor = "red";
+        }
+    }
+    function againbtn(){
+        let red = document.getElementsByTagName("tr");
+        for (let i=0;i<red.length;i++) {
+            red[i].style.backgroundColor = "white";
+        }
+    }
+</script>
+</body>
+</html>
