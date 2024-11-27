@@ -2,44 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Table with Reset Button</title>
     <style>
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
+        table {
+            width: 100%; /* Make table responsive */
+            border-collapse: collapse; /* Remove gaps between cells */
+            margin: 20px 0; /* Add spacing around the table */
+        }
+
+        th, td {
+            border: 1px solid #ddd; /* Add borders for better visibility */
+            padding: 10px; /* Add padding for readability */
+            text-align: left; /* Align text to the left */
+        }
+
+        th {
+            background-color: #f4f4f4; /* Highlight header row */
+        }
+
+        button {
+            display: block; /* Stack buttons vertically */
+            width: 80%; /* Make buttons adjust to smaller screens */
+            margin: 10px auto; /* Center buttons */
+            padding: 10px;
+            font-size: 16px; /* Ensure text is readable */
+            border: none;
+            border-radius: 5px; /* Smooth edges for buttons */
+            cursor: pointer; /* Change cursor to pointer for clarity */
+        }
+
+        /* Button hover effects */
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            th, td {
+                font-size: 14px; /* Adjust font size for tablets */
+                padding: 8px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            th, td {
+                font-size: 12px; /* Smaller font size for phones */
+                padding: 5px;
+            }
+
+            button {
+                font-size: 12px;
+                padding: 5px;
+            }
+        }
     </style>
 </head>
 <body>
-<table style="width: 75%;height: 75%">
-    <tr class="row123">
-        <th>EVDOKIJA</th>
-        <td>Markova</td>
-    </tr>
-    <tr class="row">
-        <th>EVDOKIJA</th>
-        <td>Dermendzieva</td>
-    </tr>
-</table>
-<button id="dabe" onclick="da()" style="background-color: green">DA!!</button>
-<button id="nebe" onclick="ne()" style="background-color: red">NE!!</button>
-<button id="odnovo" onclick="againbtn()" style="background-color: burlywood">IZ POCETKA!!</button>
-<script>
-    function da(){
-        let red = document.getElementsByClassName("row");
-        for (let i=0;i<red.length;i++) {
-            red[i].style.backgroundColor = "green";
+    <table>
+        <tr class="row123">
+            <th>EVDOKIJA</th>
+            <td>Markova</td>
+        </tr>
+        <tr class="row">
+            <th>EVDOKIJA</th>
+            <td>Dermendzieva</td>
+        </tr>
+    </table>
+    <button id="dabe" onclick="da()" style="background-color: green; color: white;">DA!!</button>
+    <button id="nebe" onclick="ne()" style="background-color: red; color: white;">NE!!</button>
+    <button id="odnovo" onclick="againbtn()" style="background-color: burlywood; color: white;">IZ POCETKA!!</button>
+    <script>
+        function da() {
+            let rows = document.getElementsByClassName("row");
+            for (let i = 0; i < rows.length; i++) {
+                rows[i].style.backgroundColor = "green";
+            }
         }
-    }
-    function ne(){
-        let red = document.getElementsByClassName("row123");
-        for (let i=0;i<red.length;i++) {
-            red[i].style.backgroundColor = "red";
+
+        function ne() {
+            let rows = document.getElementsByClassName("row123");
+            for (let i = 0; i < rows.length; i++) {
+                rows[i].style.backgroundColor = "red";
+            }
         }
-    }
-    function againbtn(){
-        let red = document.getElementsByTagName("tr");
-        for (let i=0;i<red.length;i++) {
-            red[i].style.backgroundColor = "white";
+
+        function againbtn() {
+            let rows = document.getElementsByTagName("tr");
+            for (let i = 0; i < rows.length; i++) {
+                rows[i].style.backgroundColor = "white";
+            }
         }
-    }
-</script>
+    </script>
 </body>
 </html>
